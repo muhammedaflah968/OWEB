@@ -1,960 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craft World | Official Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logo.png" />
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: #f0fdf4;
-        color: #111;
-      }
-      nav {
-        background: #065f46;
-        color: blue;
-        padding: 1em 2em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      nav .logo {
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      nav .logo img {
-        height: 40px;
-        margin-right: 10px;
-      }
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.5em;
-        margin: 0;
-      }
-      nav ul li a {
-        color: black;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-      nav ul li a:hover {
-        color: #bbf7d0;
-      }
-      .hero {
-        text-align: center;
-        background: url(https://www.shutterstock.com/image-vector/healthcare-medical-plus-pattern-blue-600nw-2474332047.jpg) no-repeat center center/cover;
-        padding: 100px 20px;
-        color: white;
-      }
-      .hero h1 {
-        font-size: 60px;
-        margin-bottom: 20px;
-      }
-      .hero p {
-        font-size: 20px;
-        max-width: 600px;
-        margin: auto;
-      }
-      .hero .btn {
-        background-color: #07857;
-        color: #333;
-        padding: 14px 28px;
-        font-size: 16px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        margin-top: 30px;
-        transition: background-color 0.3s;
-      }
-      .hero .btn:hover {
-        background-color: #065f46;
-      }
-      section {
-        padding: 60px 20px;
-        max-width: 1000px;
-        margin: auto;
-      }
-      section h2 {
-        font-size: 36px;
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .features, .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-      .feature-box, .gallery img {
-        background:#047;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        text-align: center;
-      }
-      .gallery img {
-        padding: 0;
-        height: 200px;
-        object-fit: cover;
-      }
-      form {
-        max-width: 600px;
-        margin: auto;
-      }
-      form input, form textarea {
-        width: 100%;
-        padding: 14px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 16px;
-      }
-      form button {
-        background-color: #047857;
-        color: white;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-      form button:hover {
-        background-color: #065f46;
-      }
-      footer {
-        background-color: #065f46;
-        color: black;
-        text-align: center;
-        padding: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <img src="logo.png" alt="Craft World Logo" /> Craft World
-      </div>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#download">Download</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <section class="hero" id="home">
-      <h1>WELCOME TO CRAFT WORLD</h1>
-      <p>
-        Build. Explore. Survive. Play the ultimate sandbox game with limitless
-        fun.
-      </p>
-      <button class="btn">Download Now</button>
-    </section>
-
-    <section id="features">
-      <h2>Game Features</h2>
-      <div class="features">
-        <div class="feature-box">
-          <h3>Creative Mode</h3>
-          <p>Unlimited resources to build anything.</p>
-        </div>
-        <div class="feature-box">
-          <h3>Survival Mode</h3>
-          <p>Gather, craft, and survive the night.</p>
-        </div>
-        <div class="feature-box">
-          <h3>Multiplayer</h3>
-          <p>Team up with friends and build together.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <h2>Game Gallery</h2>
-      <div class="gallery">
-        <img
-          src="https://via.placeholder.com/300x200?text=Build+World"
-          alt="CRAFT IS A BEATIFULL THINK IN THE CRAFT A BEATIFULL CERATING YOU . YOU WAS PLAYING WITH ME AND YOU AS A BEATIFULL PLAYER  IN THE  WORLD YOU COME HIM"
-        />
-        <img
-          src="https://via.placeholder.com/300x200?text=Castle"
-          alt="Castle my castle is very  beatifull my castle in ponnani mla was abdu samad samadani sahib"
-        />
-        <img
-          src="https://via.placeholder.com/300x200?text=Village"
-          alt="Village MY VILLAGE IS PUTUPALLY  IS VERY BEATIFULL PLACE IN PUTUPALLY AND ALL VILLAGE"
-        />
-      </div>
-    </section>
-
-    <section id="download">
-      <h2>Download Craft World</h2>
-      <p style="text-align:center;">Available for Android and Windows</p>
-      <div style="text-align:center;">
-        <a href="#" class="btn">Download for Android</a>
-        <a href="#" class="btn">Download for PC</a>
-      </div>
-    </section>
-
-  <section id="contact">
-  <h2>Contact Us</h2>
-<form action="https://formsubmit.co/muhammedaflah628@gmail.com" method="POST" class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
-                        <input type="hidden" name="_captcha" value="false">
-                       
-                        <div class="mb-6">
-                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
-                        </div>
-                       
-                        <div class="mb-6">
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
-                        </div>
-                       
-                       
-                        <div class="mb-6">
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-left">Your Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or query..." required class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"></textarea>
-                        </div>
-                       
-                        <button type="submit" class="w-full p-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center">
-                            <span>Send Message</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                    </form>
-</section>
-
-
-
-    <footer>&copy; 2025 Craft World | Created by ultify studio</footer>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craft World Game</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to Craft World</h1>
-      <p>Click the button below to start the game!</p>
-    </header>
-
-    <div class="main-content">
-      <a href="https://example.com/game-link" class="game-link">Start Game</a>
-    </div>
-
-    <footer><p>© 2025 Craft World</p></footer>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craft World Game</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to Craft World</h1>
-      <p>Click the button below to download Free Fire!</p>
-    </header>
-
-    <div class="main-content">
-      <a
-        href="https://play.google.com/store/apps/details?id=com.dts.freefireth"
-        class="game-link"
-        target="_blank"
-        >Download Free Fire (Android)</a
-      >
-      <br />
-      <a
-        href="https://apps.apple.com/us/app/free-fire/id1352043436"
-        class="game-link"
-        target="_blank"
-        >Download Free Fire (iOS)</a
-      >
-    </div>
-
-    <footer><p>© 2025 Craft World</p></footer>
-  </body>
-</html>
-<!-- Free Fire -->
-<h2>🔥 Free Fire</h2>
-<a
-  href="https://play.google.com/store/apps/details?id=com.dts.freefireth"
-  class="phone android"
-  target="_blank"
-  >Android</a
->
-<a
-  href="https://apps.apple.com/us/app/free-fire/id1352043436"
-  class="phone ios"
-  target="_blank"
-  >iOS</a
->
-
-<!-- PUBG Mobile -->
-<h2>🔫 PUBG Mobile</h2>
-<a
-  href="https://play.google.com/store/apps/details?id=com.tencent.ig"
-  class="phone android"
-  target="_blank"
-  >Android</a
->
-<a
-  href="https://apps.apple.com/us/app/pubg-mobile/id1330123889"
-  class="phone ios"
-  target="_blank"
-  >iOS</a
->
-
-<!-- Call of Duty Mobile -->
-<h2>⚔️ Call of Duty: Mobile</h2>
-<a
-  href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter"
-  class="phone android"
-  target="_blank"
-  >Android</a
->
-<a
-  href="https://apps.apple.com/us/app/call-of-duty-mobile/id1287282214"
-  class="phone ios"
-  target="_blank"
-  >iOS</a
->
-
-<!-- Asphalt 9 -->
-<h2>🚗 Asphalt 9: Legends</h2>
-<a
-  href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA9HM"
-  class="phone android"
-  target="_blank"
-  >Android</a
->
-<a
-  href="https://apps.apple.com/us/app/asphalt-9-legends/id805603214"
-  class="phone ios"
-  target="_blank"
-  >iOS</a
->
-
-<!-- eFootball 2024 -->
-<h2>⚽ eFootball 2024</h2>
-<a
-  href="https://play.google.com/store/apps/details?id=jp.konami.pesam"
-  class="phone android"
-  target="_blank"
-  >Android</a
->
-<a
-  href="https://apps.apple.com/us/app/efootball-2024/id1117270703"
-  class="phone ios"
-  target="_blank"
-  >iOS</a
->
-
-<!-- Greeting -->
-<h2 id="greeting"></h2>
-
-<p id="clock" style="font-size: 4.5rem; color:#0085de.;"></p>
-
-<!-- Show clicks -->
-<div id="android_clicks" style="color: #0085de; margin-top: 10px;"></div>
-<div id="ios_clicks" style="color: #fff; margin-top: 10px;"></div>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Click Game</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
-        background-color: #0085;
-        color: white;
-      }
-
-      button {
-        font-size: 24px;
-        padding: 20px 40px;
-        margin-top: 20px;
-        cursor: pointer;
-        background-color: #4CAF50;
-        color: black;
-        border: none;
-        border-radius: 10px;
-      }
-
-      button:disabled {
-        background-color: #0085de;
-      }
-
-      h1 {
-        font-size: 2.5em;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Click Game</h1>
-    <p>
-      Click the button as many times as you can in <strong>5 seconds</strong>!
-    </p>
-    <p>Score: <span id="score">0</span></p>
-    <p>Time Left: <span id="time">5</span> seconds</p>
-    <button id="clickBtn" onclick="handleClick()">Start Game</button>
-
-    <script>
-      let score = 0;
-      let timeLeft = 5;
-      let gameStarted = false;
-      let timer;
-
-      function handleClick() {
-        if (!gameStarted) {
-          startGame();
-        } else {
-          score++;
-          document.getElementById('score').textContent = score;
-        }
-      }
-
-      function startGame() {
-        gameStarted = true;
-        score = 0;
-        timeLeft = 5;
-        document.getElementById('score').textContent = score;
-        document.getElementById('clickBtn').textContent = 'Click!';
-        timer = setInterval(() => {
-          timeLeft--;
-          document.getElementById('time').textContent = timeLeft;
-          if (timeLeft <= 0) {
-            endGame();
-          }
-        }, 1000);
-      }
-
-      function endGame() {
-        clearInterval(timer);
-        document.getElementById('clickBtn').textContent = 'Play Again';
-        gameStarted = false;
-        alert('Time\'s up! Your score: ' + score);
-      }
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Styled Page</title>
-    <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      /* Body with beautiful gradient background */
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #0085de;
-        text-align: center;
-        padding-bottom: 50px;
-      }
-
-      /* Header */
-      header {
-        background: rgba(0, 0, 0, 0.7);
-        color: #0085de;
-        padding: 30px 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      }
-
-      header h1 {
-        font-size: 2.8rem;
-        margin-bottom: 10px;
-      }
-
-      /* Game Sections */
-      .main-content {
-        padding: 40px 20px;
-      }
-
-      /* Game title */
-      h2 {
-        margin-top: 40px;
-        font-size: 2rem;
-        color: #333;
-      }
-
-      /* Phone-style buttons */
-      .phone {
-        display: inline-block;
-        width: 160px;
-        height: 280px;
-        margin: 15px;
-        text-align: center;
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        font-size: 1.2rem;
-        line-height: 240px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-        position: relative;
-        transition: transform 0.3s ease;
-      }
-
-      .phone:hover {
-        transform: scale(1.05);
-      }
-
-      /* Icon styling */
-      .phone::before {
-        content: '';
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        background-position: center top 20px;
-        width: 100%;
-        height: 80px;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      /* Android phone style */
-      .android {
-        background: linear-gradient(145deg, #3ddc84, #0085de);
-        border-radius: 20px 20px 30px 30px;
-      }
-
-      .android::before {
-        background-image: url('https://img.icons8.com/ios-filled/50/0085de/android-os.png');
-      }
-
-      /* iOS phone style */
-      .ios {
-        background: linear-gradient(145deg, #1c1c1c, #0085de);
-        border-radius: 50px;
-        font-family: "San Francisco", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      }
-
-      .ios::before {
-        background-image: url('https://img.icons8.com/ios-filled/50/ffffff/mac-os.png');
-      }
-
-      /* Footer */
-      footer {
-        background: rgba(0, 0, 0, 0.8);
-        color: #0085de;
-        padding: 20px;
-        margin-top: 40px;
-        font-size: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header><h1>Welcome to the Game Hub</h1></header>
-
-    <div class="main-content">
-      <h2>Choose Your Platform</h2>
-      <a href="#" class="phone android">Android</a>
-      <a href="#" class="phone ios">iOS</a>
-    </div>
-
-    <footer><p>&copy; 2025 Game Hub. All rights reserved.</p></footer>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Game Hub</title>
+  <title>Acme Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet"/>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      background-attachment: fixed;
-      color: #0085de;
-      text-align: center;
-      padding-bottom: 50px;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
     }
-
     header {
-      background: rgba(0, 0, 0, 0.7);
-      color: #0085de;
-      padding: 30px 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-    }
-
-    .main-content {
-      padding: 40px 20px;
-    }
-
-    .phone {
-      display: inline-block;
-      width: 160px;
-      height: 280px;
-      margin: 15px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 0;
       text-align: center;
+      font-family: 'Pacifico', cursive;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
       text-decoration: none;
+      font-size: 18px;
+    }
+    .logo {
+      font-size: 24px;
+      font-family: 'Pacifico', cursive;
       color: white;
-      font-weight: bold;
-      font-size: 1.2rem;
-      line-height: 240px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
-      transition: transform 0.3s ease;
     }
-
-    .phone:hover {
-      transform: scale(1.05);
+    .hero-content {
+      background-color: #FF5733;
+      color: white;
+      padding: 50px;
+      text-align: center;
     }
-
-    .phone::before {
-      content: '';
-      background-size: 40px 40px;
-      background-repeat: no-repeat;
-      background-position: center top 20px;
-      width: 100%;
-      height: 80px;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .android {
-      background: linear-gradient(145deg, #3ddc84, #0085de);
-      border-radius: 20px 20px 30px 30px;
-    }
-
-    .android::before {
-      background-image: url('https://img.icons8.com/ios-filled/50/0085de/android-os.png');
-    }
-
-    .ios {
-      background: linear-gradient(145deg, #1c1c1c, #0085de);
-      border-radius: 50px;
-      font-family: "San Francisco", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    }
-
-    .ios::before {
-      background-image: url('https://img.icons8.com/ios-filled/50/ffffff/mac-os.png');
-    }
-
-    #changeBg {
-      margin-top: 20px;
+    .btn {
+      background-color: #ffb74d;
+      color: white;
       padding: 10px 20px;
-      font-size: 1rem;
-      background-color: #3498db;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #ff9800;
+    }
+    section {
+      padding: 50px;
+      text-align: center;
+    }
+    section#services {
+      background-color: #e0f7fa;
+    }
+    .service-boxes {
+      display: flex;
+      justify-content: center;
+    }
+    .service {
+      background-color: #ffeb3b;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .service h3 {
+      color: #333;
+    }
+    .service p {
+      color: #555;
+    }
+    footer {
+      background-color: #333;
       color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    footer p {
+      margin: 0;
+    }
+    .contact-form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .contact-form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 30px;
       border: none;
       border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
     }
-
-    #changeBg:hover {
-      background-color: #2980b9;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      color: #0085de;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    .info {
-      margin-top: 20px;
-      font-size: 1.2rem;
+    .contact-form button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 id="greeting">Loading...</h1>
-    <p id="clock">--:--:--</p>
+    <nav>
+      <div class="logo">Craft Land</div>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="main-content">
-    <h2>Choose Your Platform</h2>
-    <a href="#" class="phone android">Android</a>
-    <div id="android_clicks" class="info">Clicked: 0 times</div>
-    <a href="#" class="phone ios">iOS</a>
-    <div id="ios_clicks" class="info">Clicked: 0 times</div>
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to Craft World</h1>
+      <p>Handmade Creations, Full of Heart</p>
+      <a href="#contact" class="btn">Order Custom Craft</a>
+    </div>
+  </section>
 
-    <button id="changeBg">Change Background</button>
-  </div>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="service">
+        <h3>Web Development</h3>
+        <p>Custom websites that drive results.</p>
+      </div>
+      <div class="service">
+        <h3>Marketing Strategy</h3>
+        <p>Grow your audience with proven methods.</p>
+      </div>
+      <div class="service">
+        <h3>Brand Design</h3>
+        <p>Build a visual identity that lasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p> HI my name was muhammed shifin my father name was navas  my gmail account muhammedshifin@gmail.com.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formsubmit.co/muhammedaflah628@gmail.com" method="POST" class="contact-form">
+      <input type="hidden" name="_captcha" value="false">
+     
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required />
+      </div>
+     
+      <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required />
+      </div>
+     
+      <div>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or query..." required></textarea>
+      </div>
+     
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Game Hub. All rights reserved.</p>
+    <p>© 2025 Craft World. Made with 💛 for makers and dreamers.</p>
   </footer>
 
-  <script>
-    // Greeting based on time
-    function showGreeting() {
-      const hour = new Date().getHours();
-      let greeting = "Hello!";
-      if (hour >= 5 && hour < 12) greeting = "Good Morning 🌅";
-      else if (hour >= 12 && hour < 18) greeting = "Good Afternoon ☀️";
-      else if (hour >= 18 && hour < 22) greeting = "Good Evening 🌇";
-      else greeting = "Good Night 🌙";
-
-      const greetBox = document.getElementById("greeting");
-      if (greetBox) greetBox.textContent = greeting;
-    }
-
-    // Live Clock
-    function showClock() {
-      const clockBox = document.getElementById("clock");
-      setInterval(() => {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString();
-        if (clockBox) clockBox.textContent = timeStr;
-      }, 1000);
-    }
-
-    // Enhanced random background gradient
-    function changeBackground() {
-      const gradients = [
-        ["#ff7e5f", "#feb47b"],
-        ["#6a11cb", "#2575fc"],
-        ["#43cea2", "#185a9d"],
-        ["#ff512f", "#dd2476"],
-        ["#00c9ff", "#92fe9d"],
-        ["#ee9ca7", "#ffdde1"],
-        ["#1e3c72", "#2a5298"],
-        ["#8360c3", "#2ebf91"]
-      ];
-
-      const body = document.body;
-      const [color1, color2] = gradients[
-        Math.floor(Math.random() * gradients.length)
-      ];
-      body.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
-    }
-
-    // Count clicks and store in localStorage
-    function countClicks(platform) {
-      const key = `clicks_${platform}`;
-      let clicks = parseInt(localStorage.getItem(key)) || 0;
-      clicks++;
-      localStorage.setItem(key, clicks);
-
-      const display = document.getElementById(`${platform}_clicks`);
-      if (display) display.textContent = `Clicked: ${clicks} times`;
-    }
-
-    // Initialize on DOMContentLoaded
-    document.addEventListener("DOMContentLoaded", () => {
-      showGreeting();
-      showClock();
-
-      const changeBgBtn = document.getElementById("changeBg");
-      if (changeBgBtn) {
-        changeBgBtn.addEventListener("click", changeBackground);
-      }
-
-      const androidBox = document.querySelector(".android");
-      const iosBox = document.querySelector(".ios");
-
-      if (androidBox) {
-        androidBox.addEventListener("click", () => countClicks("android"));
-      }
-
-      if (iosBox) {
-        iosBox.addEventListener("click", () => countClicks("ios"));
-      }
-
-      ["android", "ios"].forEach(platform => {
-        const count = localStorage.getItem(`clicks_${platform}`) || 0;
-        const display = document.getElementById(`${platform}_clicks`);
-        if (display) display.textContent = `Clicked: ${count} times`;
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors Game</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartBot - AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
       text-align: center;
-      padding: 50px;
+      padding: 20px;
+      font-family: 'Pacifico', cursive;
+      font-size: 30px;
     }
-    #result {
-      margin-top: 20px;
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      margin: 10px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>Rock, Paper, Scissors</h1>
-  <p>Choose your move:</p>
-  <button onclick="playGame('rock')">Rock</button>
-  <button onclick="playGame('paper')">Paper</button>
-  <button onclick="playGame('scissors')">Scissors</button>
-
-  <p id="result"></p>
-
-  <script>
-    function playGame(playerChoice) {
-      const choices = ['rock', 'paper', 'scissors'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-      let result = '';
-
-      if (playerChoice === computerChoice) {
-        result = `It's a tie! Both chose ${computerChoice}.`;
-      } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-      ) {
-        result = `You win! ${capitalizeFirstLetter(playerChoice)} beats ${computerChoice}.`;
-      } else {
-        result = `You lose! ${capitalizeFirstLetter(computerChoice)} beats ${playerChoice}.`;
-      }
-
-      document.getElementById('result').textContent = result;
-    }
-
-    function capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    .board {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(3, 100px);
-      gap: 10px;
-      justify-content: center;
-    }
-    .cell {
-      width: 100px;
-      height: 100px;
-      background-color: #f0f0f0;
+    main {
+      flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2em;
-      cursor: pointer;
+      background-color: #e5e5e5;
+      padding: 20px;
     }
-    .cell.taken {
-      pointer-events: none;
+    .chat-container {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
     }
-    #message {
+    .chat-box {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #f0f0f0;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .bot-message {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      max-width: 80%;
+    }
+    #chat-form {
+      display: flex;
+      justify-content: space-between;
       margin-top: 20px;
-      font-size: 1.5em;
+    }
+    #user-input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+    }
+    footer p {
+      margin: 0;
+    }
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Tic-Tac-Toe</h1>
-  <div class="board" id="board"></div>
-  <p id="message">Player X's turn</p>
 
-  <script>
-    const board = document.getElementById('board');
-    const message = document.getElementById('message');
-    let currentPlayer = 'X';
-    let gameBoard = ['', '', '', '', '', '', '', '', ''];
+  <header>
+    🤖 SmartBot
+  </header>
 
-    function checkWinner() {
-      const winPatterns = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],  // Rows
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],  // Columns
-        [0, 4, 8], [2, 4, 6]              // Diagonals
-      ];
+  <main>
+    <div class="chat-container">
+      <div class="chat-box" id="chat-box">
+        <div class="bot-message">Hello! I'm SmartBot. How can I help you today?</div>
+      </div>
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </main>
 
-      for (const pattern of winPatterns) {
-        const [a, b, c] = pattern;
-        if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-          return gameBoard[a];
-        }
-      }
-      return gameBoard.includes('') ? null : 'Tie';
-    }
+  <footer>
+    <p>© 2025 SmartBot. Powered by AI.</p>
+    <a href="https://www.indiatoday.in/technology/news/story/openai-ceo-sam-altman-says-studio-ghibli-frenzy-will-cause-stuff-to-break-product-delays-2702689-2025-04-02">
+      Visit the article
+    </a>
+  </footer>
 
-    function handleClick(index) {
-      if (gameBoard[index] || checkWinner()) return;
+  <script src="script.js"></script>
 
-      gameBoard[index] = currentPlayer;
-      document.getElementsByClassName('cell')[index].textContent = currentPlayer;
-      document.getElementsByClassName('cell')[index].classList.add('taken');
-
-      const winner = checkWinner();
-      if (winner) {
-        message.textContent = winner === 'Tie' ? "It's a tie!" : `${winner} wins!`;
-      } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        message.textContent = `Player ${currentPlayer}'s turn`;
-      }
-    }
-
-    function createBoard() {
-      for (let i = 0; i < 9; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.onclick = () => handleClick(i);
-        board.appendChild(cell);
-      }
-    }
-
-    createBoard();
-  </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Craft World Extended</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+    header {
+      background-color: #4b0082;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      border-radius: 15px;
+    }
+    .hero h1 {
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .section {
+      padding: 50px;
+    }
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    footer p {
+      margin: 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .partner-btn {
+      background-color: #ff9800;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .partner-btn:hover {
+      background-color: #fb8c00;
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    Craft World
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Craft World!</h1>
+  </section>
+
+
+  <section class="section">
+    <h2>Visit Our Partner Site</h2>
+    <button onclick="window.location.href='https://ultify.netlify.app'">Go to Ultify</button>
+  </section>
+
+  <section id="partners" class="section">
+    <h2>Our Partner</h2>
+    <p>Meet our trusted collaborator in creativity.</p>
+    <a href="https://6789c9bd0f432.site123.me" target="_blank" class="partner-btn">See My Second Partner - Nova Craft</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Craft World. Made with ❤️ for all makers.</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Business</title>
+</head>
+<body style="background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-blue-technology-technology-lines-blue-technology-blue-technology-picture-image_1493850.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; color: white;">
+
+  <header>
+    <h1>My Business</h1>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Welcome to Our Business</h2>
+    <p>Your success is our priority.</p>
+  </section>
+
+  <!-- Other sections... -->
+
+  <footer>
+    <p>&copy; 2025 My Business. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Image Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://img.freepik.com/free-photo/futuristic-metaverse-empty-room-product-display-presentation-abstract-technology-scifi-with-neon-light-3d-background_56104-2314.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
+      background-size: cover;
+      color: white; /* Text color for contrast */
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for header */
+    }
+    h1 {
+      font-size: 36px;
+    }
+    .content {
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>thank you for waching</h1>
+  </header>
+
+  <div class="content">
+    <p>.</p>
+  </div>
+
+</body>
+</html>
