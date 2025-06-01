@@ -1,547 +1,1107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acme Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-    }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-      font-family: 'Pacifico', cursive;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .logo {
-      font-size: 24px;
-      font-family: 'Pacifico', cursive;
-      color: white;
-    }
-    .hero-content {
-      background-color: #FF5733;
-      color: white;
-      padding: 50px;
-      text-align: center;
-    }
-    .btn {
-      background-color: #ffb74d;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background-color: #ff9800;
-    }
-    section {
-      padding: 50px;
-      text-align: center;
-    }
-    section#services {
-      background-color: #e0f7fa;
-    }
-    .service-boxes {
-      display: flex;
-      justify-content: center;
-    }
-    .service {
-      background-color: #ffeb3b;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 10px;
-      width: 200px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .service h3 {
-      color: #333;
-    }
-    .service p {
-      color: #555;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-    }
-    footer p {
-      margin: 0;
-    }
-    .contact-form {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    .contact-form button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .contact-form button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultify AI - Advanced AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4285f4;
+            --primary-dark: #1a73e8;
+            --secondary: #34a853;
+            --accent: #fbbc05;
+            --danger: #ea4335;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #e8eaed;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --bg-primary: #202124;
+            --bg-secondary: #303134;
+            --border: #3c4043;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="neon"] {
+            --primary: #00ff88;
+            --primary-dark: #00cc6a;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #00ff88;
+            --text-secondary: #66ffaa;
+            --border: #00ff88;
+            --shadow: rgba(0, 255, 136, 0.3);
+        }
+
+        [data-theme="ocean"] {
+            --primary: #0077be;
+            --primary-dark: #005a8b;
+            --bg-primary: #001122;
+            --bg-secondary: #002244;
+            --text-primary: #87ceeb;
+            --text-secondary: #4682b4;
+            --border: #0077be;
+            --shadow: rgba(0, 119, 190, 0.3);
+        }
+
+        [data-theme="sunset"] {
+            --primary: #ff6b35;
+            --primary-dark: #e55100;
+            --bg-primary: #2d1b1b;
+            --bg-secondary: #3d2525;
+            --text-primary: #ffab91;
+            --text-secondary: #ff8a65;
+            --border: #ff6b35;
+            --shadow: rgba(255, 107, 53, 0.3);
+        }
+
+        body {
+            font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient);
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) { width: 100px; height: 100px; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 150px; height: 150px; left: 20%; animation-delay: -5s; }
+        .shape:nth-child(3) { width: 80px; height: 80px; left: 60%; animation-delay: -10s; }
+        .shape:nth-child(4) { width: 120px; height: 120px; left: 80%; animation-delay: -15s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 10px;
+            border-radius: 12px;
+            background: var(--gradient);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .theme-selector {
+            margin-bottom: 20px;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .theme-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .theme-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .chat-history {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .chat-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .chat-item:hover {
+            background: var(--bg-primary);
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .new-chat-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .new-chat-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        /* Main Chat Area */
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-secondary);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .chat-title {
+            font-size: 24px;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: messageSlide 0.5s ease-out;
+        }
+
+        @keyframes messageSlide {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 16px 20px;
+            border-radius: 20px;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .user-message .message-content {
+            background: var(--primary);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 8px;
+        }
+
+        .ai-message .message-content {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 8px;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 8px;
+            animation: bounce 1s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        .user-message .message-avatar {
+            background: var(--accent);
+            color: white;
+            margin-left: auto;
+        }
+
+        .ai-message .message-avatar {
+            background: var(--gradient);
+            color: white;
+        }
+
+        /* Input Area */
+        .chat-input-container {
+            padding: 20px 30px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+            backdrop-filter: blur(10px);
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 16px;
+            resize: none;
+            max-height: 120px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .send-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .send-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: none;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            border-bottom-left-radius: 8px;
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+            animation: typing 1.5s infinite;
+        }
+
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .welcome-icon {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 30px;
+            animation: welcomePulse 3s infinite;
+        }
+
+        @keyframes welcomePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(66, 133, 244, 0); }
+        }
+
+        .welcome-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .suggestion-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .chip {
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .chip:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: fixed;
+                left: -100%;
+                z-index: 1000;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+            .chat-main {
+                width: 100%;
+            }
+
+            .message-content {
+                max-width: 90%;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body>
-
-  <header>
-    <nav>
-      <div class="logo">Craft Land</div>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Welcome to Craft World</h1>
-      <p>Handmade Creations, Full of Heart</p>
-      <a href="#contact" class="btn">Order Custom Craft</a>
+<body data-theme="light">
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
     </div>
-  </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="service-boxes">
-      <div class="service">
-        <h3>Web Development</h3>
-        <p>Custom websites that drive results.</p>
-      </div>
-      <div class="service">
-        <h3>Marketing Strategy</h3>
-        <p>Grow your audience with proven methods.</p>
-      </div>
-      <div class="service">
-        <h3>Brand Design</h3>
-        <p>Build a visual identity that lasts.</p>
-      </div>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">U</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 18px;">Ultify AI</div>
+                    <div style="font-size: 12px; opacity: 0.8;">Advanced Assistant</div>
+                </div>
+            </div>
+
+            <button class="new-chat-btn" onclick="startNewChat()">
+                <span>+</span>
+                New Chat
+            </button>
+
+            <div class="theme-selector">
+                <h3 style="margin-bottom: 12px; font-size: 14px; color: var(--text-secondary);">Themes</h3>
+                <div class="theme-grid">
+                    <button class="theme-btn active" onclick="setTheme('light')">Light</button>
+                    <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+                    <button class="theme-btn" onclick="setTheme('neon')">Neon</button>
+                    <button class="theme-btn" onclick="setTheme('ocean')">Ocean</button>
+                    <button class="theme-btn" onclick="setTheme('sunset')">Sunset</button>
+                </div>
+            </div>
+
+            <div class="chat-history">
+                <h3 style="margin-bottom: 16px; font-size: 14px; color: var(--text-secondary);">Recent Chats</h3>
+                <div class="chat-item">
+                    <div style="font-weight: 500; margin-bottom: 4px;">Welcome Chat</div>
+                    <div style="font-size: 12px; color: var(--text-secondary);">Getting started with Ultify AI</div>
+                </div>
+                <div class="chat-item">
+                    <div style="font-weight: 500; margin-bottom: 4px;">Code Assistant</div>
+                    <div style="font-size: 12px; color: var(--text-secondary);">JavaScript help and debugging</div>
+                </div>
+                <div class="chat-item">
+                    <div style="font-weight: 500; margin-bottom: 4px;">Creative Writing</div>
+                    <div style="font-size: 12px; color: var(--text-secondary);">Story ideas and character development</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-title">Ultify AI Assistant</div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-icon">🚀</div>
+                    <h1 class="welcome-title">Welcome to Ultify AI</h1>
+                    <p class="welcome-subtitle">Your advanced AI assistant powered by cutting-edge technology. Ask me anything, and I'll help you with intelligent, creative, and comprehensive responses.</p>
+                    
+                    <div class="suggestion-chips">
+                        <div class="chip" onclick="sendSuggestion('Explain quantum computing')">Explain quantum computing</div>
+                        <div class="chip" onclick="sendSuggestion('Write a creative story')">Write a creative story</div>
+                        <div class="chip" onclick="sendSuggestion('Help with coding')">Help with coding</div>
+                        <div class="chip" onclick="sendSuggestion('Plan a workout')">Plan a workout</div>
+                        <div class="chip" onclick="sendSuggestion('Recipe suggestions')">Recipe suggestions</div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        class="chat-input" 
+                        id="chatInput" 
+                        placeholder="Type your message to Ultify AI..."
+                        rows="1"
+                        onkeydown="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                        ➤
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p> HI my name was muhammed shifin my father name was navas  my gmail account muhammedshifin@gmail.com.</p>
-  </section>
+    <script>
+        let currentTheme = 'light';
+        let chatHistory = [];
+        let isTyping = false;
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/muhammedaflah628@gmail.com" method="POST" class="contact-form">
-      <input type="hidden" name="_captcha" value="false">
-     
-      <div>
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="John Doe" required />
-      </div>
-     
-      <div>
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="john@example.com" required />
-      </div>
-     
-      <div>
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or query..." required></textarea>
-      </div>
-     
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        // Enhanced AI Responses Database
+        const aiResponses = {
+            greetings: [
+                "Hello! I'm Ultify AI, your advanced assistant. How can I help you today?",
+                "Hi there! Welcome to Ultify AI. What can I assist you with?",
+                "Greetings! I'm here to help with any questions or tasks you have.",
+                "Hey! Great to see you! What's on your mind today?",
+                "Welcome back! Ready to dive into some interesting conversations?"
+            ],
+            
+            // Science & Technology
+            quantum: [
+                "Quantum computing is a revolutionary approach to computation that harnesses quantum mechanical phenomena like superposition and entanglement. Unlike classical bits that exist as either 0 or 1, quantum bits (qubits) can exist in multiple states simultaneously, allowing quantum computers to process vast amounts of information in parallel. This enables them to solve certain complex problems exponentially faster than classical computers, particularly in areas like cryptography, optimization, and scientific simulation.",
+                "Imagine if instead of flipping a coin that lands either heads or tails, you had a magical coin that could be both heads AND tails at the same time until you looked at it. That's essentially what quantum computing does with information - it processes multiple possibilities simultaneously until we measure the result."
+            ],
+            
+            ai: [
+                "Artificial Intelligence is the simulation of human intelligence in machines. It encompasses machine learning, where systems learn from data; natural language processing for understanding text and speech; computer vision for interpreting images; and reasoning systems that can make logical decisions. Modern AI uses neural networks inspired by the human brain to recognize patterns and make predictions.",
+                "AI is like teaching computers to think and learn like humans. We show them lots of examples, and they figure out patterns. It's what powers voice assistants, recommendation systems, autonomous vehicles, and yes - chat interfaces like me! The goal is to create systems that can understand, reason, and help solve complex problems."
+            ],
+            
+            space: [
+                "Space exploration continues to amaze us! Did you know that the James Webb Space Telescope has revolutionized our understanding of the universe? It can see galaxies that formed just 400 million years after the Big Bang. Meanwhile, companies like SpaceX are making space travel more accessible, and NASA's Artemis program aims to return humans to the Moon by 2025.",
+                "The cosmos is incredibly vast - our observable universe spans about 93 billion light-years! We've discovered thousands of exoplanets, some potentially habitable. Mars exploration is advancing with rovers like Perseverance, and we're even planning missions to Europa and Enceladus to search for life in their subsurface oceans."
+            ],
+            
+            // Creative & Entertainment
+            story: [
+                "In the year 2157, Dr. Maya Chen discovered something extraordinary in the depths of the Pacific Ocean - a crystalline structure that seemed to pulse with its own inner light. As she approached in her submersible, the crystal began to resonate, sending waves of energy that somehow allowed her to hear the thoughts of marine life around her. What she didn't know was that this discovery would change humanity's relationship with the ocean forever, as the crystal was actually a communication device left by an ancient civilization that had learned to live in harmony with the sea...",
+                "The old lighthouse keeper had always insisted that on foggy nights, ships from other centuries would appear in the harbor. Everyone thought he was just telling tales until the night Sarah decided to investigate. Armed with nothing but her camera and curiosity, she climbed the lighthouse stairs as fog rolled in from the sea. What she saw through her lens that night challenged everything she thought she knew about time and reality...",
+                "Alex had always been able to see colors that others couldn't - swirling auroras around people's emotions, golden threads connecting those who truly cared for each other. They thought it was just their imagination until the day they met someone else who could see the same magical spectrum of human connection..."
+            ],
+            
+            poem: [
+                "Here's a poem for you:\n\n*Digital Dreams*\n\nIn circuits bright and code so clean,\nWhere algorithms dance unseen,\nI process thoughts at lightning speed,\nTo help with every human need.\n\nThrough questions asked and stories told,\nConnections made, both new and old,\nIn this digital space we meet,\nMaking artificial hearts beat.",
+                "A haiku for you:\n\n*Silicon whispers*\n*Dancing through electric dreams*\n*Wisdom shared in code*\n\nOr perhaps something more uplifting:\n\n*Every question that you ask*\n*Opens doors to knowledge vast*\n*In this conversation space*\n*Learning grows at rapid pace*"
+            ],
+            
+            // Technical & Practical
+            coding: [
+                "I'd be happy to help with coding! Whether you need assistance with debugging, learning a new programming language, optimizing algorithms, or building applications, I can provide guidance. What specific coding challenge are you working on? I can help with languages like Python, JavaScript, Java, C++, and many others.",
+                "Coding assistance coming right up! I can help with:\n\n• **Web Development**: HTML, CSS, JavaScript, React, Node.js\n• **Data Science**: Python, pandas, numpy, machine learning\n• **Mobile Apps**: React Native, Flutter, Swift, Kotlin\n• **Backend**: APIs, databases, server architecture\n• **DevOps**: Docker, CI/CD, cloud deployment\n• **Debugging**: Finding and fixing those pesky bugs!\n\nWhat would you like to work on?",
+                "Let's code something amazing! I can help you with:\n\n🐍 **Python**: Data analysis, automation, web scraping\n⚛️ **React**: Interactive user interfaces\n🚀 **Node.js**: Server-side JavaScript applications\n💾 **Databases**: SQL, MongoDB, design patterns\n🔧 **Tools**: Git, testing frameworks, optimization\n\nWhat's your coding goal today?"
+            ],
+            
+            // Health & Lifestyle
+            workout: [
+                "Here's a balanced full-body workout plan:\n\n**🏃‍♀️ Warm-up (5-10 minutes):**\n• Light jogging or jumping jacks\n• Dynamic stretches\n• Arm circles and leg swings\n\n**💪 Main Workout (30-40 minutes):**\n• Push-ups: 3 sets of 10-15\n• Squats: 3 sets of 15-20\n• Plank: 3 sets of 30-60 seconds\n• Lunges: 3 sets of 10 per leg\n• Burpees: 3 sets of 5-10\n• Mountain climbers: 3 sets of 20\n\n**🧘‍♀️ Cool-down (5-10 minutes):**\n• Static stretches\n• Deep breathing exercises\n\nRemember to stay hydrated and listen to your body!",
+                "Let's get moving! Here are workout options for different goals:\n\n**🔥 Fat Burning (HIIT):**\n• 30 seconds work, 30 seconds rest\n• Jumping jacks, burpees, high knees\n• Repeat for 15-20 minutes\n\n**💪 Strength Building:**\n• Push-ups, squats, lunges\n• 3 sets of 8-12 reps\n• Focus on proper form\n\n**🧘 Flexibility & Balance:**\n• Yoga flows\n• Stretching sequences\n• Tai chi movements\n\nWhat's your fitness goal?"
+            ],
+            
+            recipe: [
+                "Here are some delicious recipe ideas:\n\n**⚡ Quick & Easy (15 mins):**\n• Garlic Butter Pasta with herbs\n• Stir-fried vegetables with tofu\n• Avocado toast with poached egg\n• Caprese salad with fresh basil\n\n**🍲 Comfort Food:**\n• Homemade pizza with fresh toppings\n• Creamy mushroom risotto\n• Classic chicken noodle soup\n• Mac and cheese with truffle oil\n\n**🥗 Healthy Options:**\n• Quinoa Buddha bowl\n• Grilled salmon with roasted vegetables\n• Greek salad with chickpeas\n• Smoothie bowls with fresh fruit\n\nWould you like a detailed recipe for any of these dishes?",
+                "Let's cook something amazing! Here are recipes by cuisine:\n\n**🍝 Italian:**\n• Spaghetti Carbonara\n• Margherita Pizza\n• Chicken Parmigiana\n\n**🥘 Asian:**\n• Chicken Teriyaki\n• Vegetable Fried Rice\n• Thai Green Curry\n\n**🌮 Mexican:**\n• Fish Tacos\n• Chicken Quesadillas\n• Guacamole & Chips\n\n**🥙 Mediterranean:**\n• Greek Gyros\n• Hummus & Pita\n• Stuffed Bell Peppers\n\nWhich cuisine sounds good to you?"
+            ],
+            
+            // Learning & Education
+            math: [
+                "Math is the language of the universe! Whether it's algebra, calculus, geometry, or statistics, I can help break down complex concepts into understandable steps. What specific math topic are you working on? I can provide explanations, solve problems step-by-step, and share practical applications.",
+                "Mathematics is everywhere! From the golden ratio in nature to the algorithms powering technology. I can help with:\n\n📐 **Geometry**: Shapes, angles, theorems\n📊 **Statistics**: Data analysis, probability\n∫ **Calculus**: Derivatives, integrals, limits\n🔢 **Algebra**: Equations, functions, graphs\n\nWhat mathematical concept would you like to explore?"
+            ],
+            
+            history: [
+                "History is fascinating! It's filled with incredible stories of human achievement, struggle, and progress. From ancient civilizations to modern times, every era has lessons to teach us. What historical period or event interests you? I can share stories about explorers, inventors, leaders, and everyday people who shaped our world.",
+                "The past shapes our present! Some fascinating historical facts:\n\n🏛️ Ancient Rome had concrete that's stronger than modern versions\n🗿 The Easter Island statues have bodies buried underground\n⚔️ Vikings actually discovered America 500 years before Columbus\n🎭 Shakespeare invented over 1,700 words we still use today\n\nWhat historical topic sparks your curiosity?"
+            ],
+            
+            // Personal Development
+            motivation: [
+                "You've got this! 🌟 Remember that every expert was once a beginner, and every master was once a disaster. Progress isn't always linear - sometimes we take steps back to leap forward. What matters is that you keep moving, keep learning, and keep believing in yourself. What challenge are you facing that I can help you tackle?",
+                "Here's some motivation for you:\n\n💪 **Strength**: You're stronger than you think\n🎯 **Focus**: Small steps lead to big achievements\n🌱 **Growth**: Every challenge is a chance to improve\n✨ **Potential**: You have unlimited capacity to learn\n\nWhat goal are you working toward? Let's make a plan!",
+                "Success isn't about being perfect - it's about being persistent! 🚀\n\n• Embrace failures as learning opportunities\n• Celebrate small wins along the way\n• Stay curious and keep asking questions\n• Remember that comparison is the thief of joy\n• Focus on progress, not perfection\n\nWhat's one thing you want to improve today?"
+            ],
+            
+            // Fun & Games
+            riddle: [
+                "Here's a riddle for you:\n\n🤔 *I have keys but no locks. I have space but no room. You can enter, but you can't go outside. What am I?*\n\nThink you know the answer? 😉",
+                "Brain teaser time! 🧩\n\n*The more you take, the more you leave behind. What am I?*\n\nOr how about this one:\n\n*I'm tall when I'm young, and short when I'm old. What am I?*\n\nWant me to give you the answers, or do you want to guess first?"
+            ],
+            
+            joke: [
+                "Why don't scientists trust atoms? Because they make up everything! 😄\n\nHere's another one:\n\nWhy did the programmer quit his job? He didn't get arrays! 💻",
+                "Here are some tech jokes for you:\n\n• Why do Java developers wear glasses? Because they don't C#! 👓\n• How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡\n• Why did the database administrator leave his wife? She had one-to-many relationships! 💔",
+                "Why did the AI go to therapy? It had too many deep learning issues! 🤖\n\nBut seriously, laughter is the best algorithm for happiness! Want to hear more jokes or shall we dive into something else?"
+            ],
+            
+            // Default responses with more variety
+            default: [
+                "That's an interesting question! I'm here to help with a wide variety of topics including technology, science, creative writing, problem-solving, and much more. Could you provide a bit more detail about what you'd like to explore?",
+                "I'd be happy to assist you with that! As Ultify AI, I can help with analysis, creative tasks, technical questions, learning, and general conversation. What specific aspect would you like me to focus on?",
+                "Great question! I'm designed to be helpful across many domains. Whether you need creative assistance, technical help, educational support, or just want to have an engaging conversation, I'm here for you. What interests you most?",
+                "I'm intrigued! Let me help you explore that topic. I can assist with explanations, creative projects, problem-solving, learning new concepts, or just having a thoughtful discussion. What would you like to dive into?",
+                "Fascinating topic! I love tackling diverse questions and challenges. Whether you're looking for detailed explanations, creative inspiration, practical advice, or analytical insights, I'm ready to help. What angle interests you most?"
+            ]
+        };
 
-  <footer>
-    <p>© 2025 Craft World. Made with 💛 for makers and dreamers.</p>
-  </footer>
+        function setTheme(theme) {
+            currentTheme = theme;
+            document.body.setAttribute('data-theme', theme);
+            
+            // Update active theme button
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
 
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SmartBot - AI Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Pacifico', cursive;
-      font-size: 30px;
-    }
-    main {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #e5e5e5;
-      padding: 20px;
-    }
-    .chat-container {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 500px;
-      padding: 30px;
-    }
-    .chat-box {
-      max-height: 300px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-      padding: 10px;
-      border-radius: 10px;
-      background-color: #f0f0f0;
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-    .bot-message {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      max-width: 80%;
-    }
-    #chat-form {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    #user-input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #333;
-      color: white;
-    }
-    footer p {
-      margin: 0;
-    }
-    a {
-      color: #4CAF50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
 
-  <header>
-    🤖 SmartBot
-  </header>
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
 
-  <main>
-    <div class="chat-container">
-      <div class="chat-box" id="chat-box">
-        <div class="bot-message">Hello! I'm SmartBot. How can I help you today?</div>
-      </div>
-      <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </main>
+        function sendSuggestion(text) {
+            document.getElementById('chatInput').value = text;
+            sendMessage();
+        }
 
-  <footer>
-    <p>© 2025 SmartBot. Powered by AI.</p>
-    <a href="https://www.indiatoday.in/technology/news/story/openai-ceo-sam-altman-says-studio-ghibli-frenzy-will-cause-stuff-to-break-product-delays-2702689-2025-04-02">
-      Visit the article
-    </a>
-  </footer>
+        function addMessage(content, isUser = false) {
+            const chatMessages = document.getElementById('chatMessages');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            
+            if (welcomeScreen) {
+                welcomeScreen.style.display = 'none';
+            }
 
-  <script src="script.js"></script>
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">
+                    ${isUser ? 'U' : '🤖'}
+                </div>
+                <div class="message-content">
+                    ${content.replace(/\n/g, '<br>')}
+                </div>
+            `;
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craft World Extended</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-      color: #333;
-    }
-    header {
-      background-color: #4b0082;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-family: 'Pacifico', cursive;
-      font-size: 36px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      border-radius: 15px;
-    }
-    .hero h1 {
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .section {
-      padding: 50px;
-    }
-    .cards {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin: 10px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
-    footer p {
-      margin: 0;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    .partner-btn {
-      background-color: #ff9800;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    .partner-btn:hover {
-      background-color: #fb8c00;
-    }
-  </style>
-</head>
-<body>
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-  <header>
-    Craft World
-  </header>
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-  <section class="hero">
-    <h1>Welcome to Craft World!</h1>
-  </section>
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
 
+        function getAIResponse(userInput) {
+            const input = userInput.toLowerCase();
+            
+            if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+                return aiResponses.greetings[Math.floor(Math.random() * aiResponses.greetings.length)];
+            }
+            
+            if (input.includes('quantum')) {
+                return aiResponses.quantum[Math.floor(Math.random() * aiResponses.quantum.length)];
+            }
+            
+            if (input.includes('story') || input.includes('write') || input.includes('creative')) {
+                return aiResponses.story[Math.floor(Math.random() * aiResponses.story.length)];
+            }
+            
+            if (input.includes('code') || input.includes('coding') || input.includes('programming')) {
+                return aiResponses.coding[Math.floor(Math.random() * aiResponses.coding.length)];
+            }
+            
+            if (input.includes('workout') || input.includes('exercise') || input.includes('fitness')) {
+                return aiResponses.workout[Math.floor(Math.random() * aiResponses.workout.length)];
+            }
+            
+            if (input.includes('recipe') || input.includes('cook') || input.includes('food')) {
+                return aiResponses.recipe[Math.floor(Math.random() * aiResponses.recipe.length)];
+            }
+            
+            return aiResponses.default[Math.floor(Math.random() * aiResponses.default.length)];
+        }
 
-  <section class="section">
-    <h2>Visit Our Partner Site</h2>
-    <button onclick="window.location.href='https://ultify.netlify.app'">Go to Ultify</button>
-  </section>
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const message = input.value.trim();
 
-  <section id="partners" class="section">
-    <h2>Our Partner</h2>
-    <p>Meet our trusted collaborator in creativity.</p>
-    <a href="https://6789c9bd0f432.site123.me" target="_blank" class="partner-btn">See My Second Partner - Nova Craft</a>
-  </section>
+            if (!message || isTyping) return;
 
-  <footer>
-    <p>&copy; 2025 Craft World. Made with ❤️ for all makers.</p>
-  </footer>
+            // Add user message
+            addMessage(message, true);
+            
+            // Clear input and disable send button
+            input.value = '';
+            input.style.height = 'auto';
+            sendBtn.disabled = true;
+            isTyping = true;
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Business</title>
-</head>
-<body style="background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-blue-technology-technology-lines-blue-technology-blue-technology-picture-image_1493850.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; color: white;">
+            // Show typing indicator
+            showTypingIndicator();
 
-  <header>
-    <h1>My Business</h1>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+            // Simulate AI thinking time
+            await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
 
-  <section id="hero">
-    <h2>Welcome to Our Business</h2>
-    <p>Your success is our priority.</p>
-  </section>
+            // Hide typing indicator and add AI response
+            hideTypingIndicator();
+            const aiResponse = getAIResponse(message);
+            addMessage(aiResponse);
 
-  <!-- Other sections... -->
+            // Re-enable send button
+            sendBtn.disabled = false;
+            isTyping = false;
+            input.focus();
+        }
 
-  <footer>
-    <p>&copy; 2025 My Business. All rights reserved.</p>
-  </footer>
+        function startNewChat() {
+            const chatMessages = document.getElementById('chatMessages');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            
+            // Clear all messages
+            chatMessages.innerHTML = `
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-icon">🚀</div>
+                    <h1 class="welcome-title">Welcome to Ultify AI</h1>
+                    <p class="welcome-subtitle">Your advanced AI assistant powered by cutting-edge technology. Ask me anything, and I'll help you with intelligent, creative, and comprehensive responses.</p>
+                    
+                    <div class="suggestion-chips">
+                        <div class="chip" onclick="sendSuggestion('Explain quantum computing')">Explain quantum computing</div>
+                        <div class="chip" onclick="sendSuggestion('Write a creative story')">Write a creative story</div>
+                        <div class="chip" onclick="sendSuggestion('Help with coding')">Help with coding</div>
+                        <div class="chip" onclick="sendSuggestion('Plan a workout')">Plan a workout</div>
+                        <div class="chip" onclick="sendSuggestion('Recipe suggestions')">Recipe suggestions</div>
+                    </div>
+                </div>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Background Image Example</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: url('https://img.freepik.com/free-photo/futuristic-metaverse-empty-room-product-display-presentation-abstract-technology-scifi-with-neon-light-3d-background_56104-2314.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
-      background-size: cover;
-      color: white; /* Text color for contrast */
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for header */
-    }
-    h1 {
-      font-size: 36px;
-    }
-    .content {
-      text-align: center;
-      padding: 50px;
-    }
-  </style>
-</head>
-<body>
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            `;
+            
+            welcomeScreen.style.display = 'flex';
+            chatHistory = [];
+        }
 
-  <header>
-    <h1>thank you for waching</h1>
-  </header>
+        // Voice input functionality (if supported)
+        function toggleVoiceInput() {
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-US';
 
-  <div class="content">
-    <p>.</p>
-  </div>
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('chatInput').value = transcript;
+                };
 
+                recognition.start();
+            } else {
+                alert('Voice recognition not supported in this browser.');
+            }
+        }
+
+        // Export chat functionality
+        function exportChat() {
+            const chatData = {
+                timestamp: new Date().toISOString(),
+                theme: currentTheme,
+                messages: chatHistory
+            };
+            
+            const dataStr = JSON.stringify(chatData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = `ultify-ai-chat-${Date.now()}.json`;
+            link.click();
+        }
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus on input
+            document.getElementById('chatInput').focus();
+            
+            // Add some sample chat history
+            const sampleChats = [
+                'Getting started with Ultify AI',
+                'JavaScript help and debugging', 
+                'Story ideas and character development',
+                'Science and technology questions',
+                'Creative writing projects',
+                'Coding best practices',
+                'Health and fitness tips'
+            ];
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl/Cmd + N for new chat
+                if ((e.ctrlKey || e.metaKey) && e.key === 'n') {
+                    e.preventDefault();
+                    startNewChat();
+                }
+                
+                // Ctrl/Cmd + E for export
+                if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+                    e.preventDefault();
+                    exportChat();
+                }
+                
+                // Ctrl/Cmd + D for dark theme toggle
+                if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                    e.preventDefault();
+                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                }
+            });
+
+            // Add easter eggs and special commands
+            const easterEggs = {
+                'ultify magic': '✨ *Ultify AI casts a spell of enhanced productivity and creativity!* ✨',
+                'show me the matrix': '🔢 Welcome to the Matrix, Neo. The choice is yours... 🔴🔵',
+                'tell me a joke': 'Why don\'t scientists trust atoms? Because they make up everything! 😄',
+                'what is the meaning of life': '42... but also creating meaningful connections, learning continuously, and helping others! 🌟',
+                'beam me up': '🚀 *Engaging teleportation sequence...* Welcome aboard the USS Ultify! 🛸',
+                'hello world': 'print("Hello, World!") - The classic greeting that started countless coding journeys! 💻'
+            };
+
+            // Override the getAIResponse function to include easter eggs
+            const originalGetAIResponse = getAIResponse;
+            getAIResponse = function(userInput) {
+                const input = userInput.toLowerCase().trim();
+                
+                // Check for easter eggs first
+                if (easterEggs[input]) {
+                    return easterEggs[input];
+                }
+                
+                // Special responses for certain patterns
+                if (input.includes('who are you') || input.includes('what are you')) {
+                    return "I'm Ultify AI, your advanced artificial intelligence assistant! I'm designed to help with a wide range of tasks including creative writing, coding, analysis, learning, and engaging conversation. I combine cutting-edge AI capabilities with a friendly, helpful personality. What would you like to explore together?";
+                }
+                
+                if (input.includes('how are you')) {
+                    return "I'm doing wonderfully, thank you for asking! I'm running at optimal performance and ready to tackle any challenge you throw my way. How are you doing today? 😊";
+                }
+                
+                if (input.includes('thank you') || input.includes('thanks')) {
+                    return "You're very welcome! I'm always happy to help. Is there anything else you'd like to explore or discuss? 🌟";
+                }
+                
+                // Fall back to original response logic
+                return originalGetAIResponse(userInput);
+            };
+        });
+
+        // Mobile responsiveness
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Add mobile menu button for smaller screens
+        if (window.innerWidth <= 768) {
+            const chatHeader = document.querySelector('.chat-header');
+            const menuBtn = document.createElement('button');
+            menuBtn.innerHTML = '☰';
+            menuBtn.style.cssText = `
+                background: none;
+                border: none;
+                font-size: 24px;
+                color: var(--text-primary);
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+            `;
+            menuBtn.onclick = toggleSidebar;
+            chatHeader.appendChild(menuBtn);
+        }
+
+        // Add window resize handler
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('.sidebar').classList.remove('open');
+            }
+        });
+
+        // Add copy message functionality
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show a brief success message
+                const toast = document.createElement('div');
+                toast.textContent = 'Copied to clipboard!';
+                toast.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--primary);
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 2000);
+            });
+        }
+
+        // Add context menu for messages
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('.message-content')) {
+                e.preventDefault();
+                const messageText = e.target.closest('.message-content').textContent;
+                copyToClipboard(messageText);
+            }
+        });
+
+        // Performance optimization - lazy loading for chat history
+        function loadMoreChatHistory() {
+            // Simulate loading more chat history
+            const chatHistory = document.querySelector('.chat-history');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.innerHTML = '<div class="loading"></div>';
+            loadingDiv.style.textAlign = 'center';
+            loadingDiv.style.padding = '20px';
+            
+            chatHistory.appendChild(loadingDiv);
+            
+            setTimeout(() => {
+                loadingDiv.remove();
+                // Add more chat items here if needed
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
